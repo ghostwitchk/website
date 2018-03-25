@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 
 # Create your models here.
 
@@ -16,8 +17,10 @@ class ProductsDiscription(models.Model):
 
 class Cart(models.Model):
     UserId = models.PositiveIntegerField()
-    ProductId = models.PositiveIntegerField()
+    ProductId = models.ForeignKey(ProductsDiscription)
     Quantity = models .PositiveIntegerField()
     Date = models.DateTimeField(auto_now= True)
+    class Meta:
+        unique_together = ("UserId","ProductId")
 
-    key = models.ForeignKey(ProductsDiscription,related_name='connection')
+  #  key = models.ForeignKey(ProductsDiscription,related_name='connection')

@@ -11,6 +11,6 @@ router = DefaultRouter()
 urlpatterns = [
 
 url(r'', include(router.urls)),
-url(r'^cart/',views.CartApi.as_view()),
-url(r'^cartitems/',views.CartItems.as_view())
+url(r'^cart/',views.TestApi.as_view()),
+url(r'^cartitems/',views.SomethingApi.as_view())
 ]

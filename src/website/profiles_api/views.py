@@ -62,4 +62,4 @@ class ReturnLoginUser(APIView):
         print(queryset)
         # print(person)
 
-        return JsonResponse({'name':list(queryset)})
+        return Response({'name':(queryset)})

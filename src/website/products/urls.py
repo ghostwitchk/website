@@ -12,5 +12,6 @@ urlpatterns = [
 
 url(r'', include(router.urls)),
 url(r'^cart/',views.TestApi.as_view()),
-url(r'^cartitems/',views.SomethingApi.as_view())
+url(r'^cartitems/',views.SomethingApi.as_view()),
+url(r'^dekho/',views.SomethingElse.as_view())
 ]

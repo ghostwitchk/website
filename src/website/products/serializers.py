@@ -50,4 +50,11 @@ class ThirdSerializer(serializers.ModelSerializer):
         fields = ('ProductId','Quantity','UserId')
 
 
+
+
+
+class RandomSerializer(serializers.ModelSerializer):
+    class Meta :
+        model = models.Cart
+        fields= ('UserId','Quantity')
 #

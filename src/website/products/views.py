@@ -1,7 +1,9 @@
+#from django.core import paginator
 from django.http import JsonResponse
 from django.shortcuts import render
 from rest_framework import status
 from rest_framework.response import Response
+from rest_framework.settings import api_settings
 from rest_framework.views import APIView
 
 from . import models
@@ -98,6 +100,10 @@ class TestApi(APIView):
 class SomethingApi(APIView):
     serializer_class = serializers.OneSerializer
     print('looser')
+   # pagination_class=api_settings.DEFAULT_PAGINATION_CLASS
+    #paginator=pagination_class()
+
+
 
     def get(self,request):
         z= int(request.GET.get('q',''))
@@ -110,3 +116,20 @@ class SomethingApi(APIView):
         print(dekho.data)
 
         return Response({'dont':dekho.data})
+
+class SomethingElse(APIView):
+    serializer_class =serializers.RandomSerializer
+    pagination_class = api_settings.DEFAULT_PAGINATION_CLASS
+
+
+    def get(self,request):
+
+      pagination_class = api_settings.DEFAULT_PAGINATION_CLASS
+      paginator = pagination_class()
+      queryset = models.Cart.objects.all().values()
+
+      page = paginator.paginate_queryset(queryset,request)
+      abc = serializers.RandomSerializer(page,many=True)
+      return paginator.get_paginated_response(abc.data)
+
+

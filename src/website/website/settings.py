@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'profiles_api',
     'rest_framework',
     'rest_framework.authtoken',
-    'products',
+    'productdescription',
+    'django_reset',
 ]
 
 MIDDLEWARE = [

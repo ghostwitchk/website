@@ -10,7 +10,7 @@ class SecondTestSerializer(serializers.ModelSerializer):
     cart__quantity = serializers.IntegerField()
     class Meta:
         model = models.Whole
-        fields = ('cart__quantity','name')
+        fields = ('cart__quantity','name','price')
 
 
 class ThirdTestSerialier(serializers.ModelSerializer):

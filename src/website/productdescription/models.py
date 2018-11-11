@@ -5,6 +5,7 @@ from django.conf import settings
 
 
 class Whole(models.Model):
+
     name = models.CharField(max_length=255)
     mrp = models.FloatField()
     price = models.FloatField()
@@ -12,6 +13,7 @@ class Whole(models.Model):
     category = models.CharField(max_length=255)
     def __str__(self):
         return self.name
+
 
 class Ram(models.Model):
     size = models.CharField(max_length=255)

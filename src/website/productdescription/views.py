@@ -34,7 +34,7 @@ class CartAnotherView(APIView):
     def get(self,request):
         z= int(request.GET.get('q',''))
 
-        queryset = models.Whole.objects.filter(cart__userid=z).values('name','cart__quantity')
+        queryset = models.Whole.objects.filter(cart__userid=z).values('name','cart__quantity','price')
         print(queryset)
         abc = serializers.SecondTestSerializer(queryset,many=True)
         return Response ({'chal gya':abc.data})

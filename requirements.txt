@@ -6,7 +6,7 @@ django-contrib-comments==1.8.0
 django-oauth-plus==2.2.9
 django-oauth2-provider==0.2.6.1
 django-reset==0.2.0
-djangorestframework==3.6.2
+djangorestframework==3.11.2
 djangorestframework-oauth==1.1.0
 httplib2==0.11.3
 idna==2.6
